@@ -1,0 +1,91 @@
+.p-tras {
+  top: 10px;
+  position: relative;
+}
+ body{
+  height: 100% !important;
+  width: 100%;
+  
+ }
+ footer{
+  height: 15%;
+ }
+
+ .next{
+  display: none;
+ }
+ .right {
+    height: 100% !important;
+  }
+
+
+  .wit {
+    width: 75%;
+  }
+
+  .but {
+    position: relative;
+    
+    width: 70%;
+
+  }
+
+  .bg-dark {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    height: 80%;
+    top: 10%;
+    position: relative;
+    width: 700px;
+    
+  }
+  @media (min-width : 1200px) {
+    .bg-dark{
+      left: 25%;
+    }
+  }
+  @media ((min-width : 1000px) and (max-width: 1200px)) {
+    .bg-dark{
+      left: 15%;
+    }
+  }
+  footer{
+    backdrop-filter: blur(10px); /* Aplicar difuminado al contenido detrás */
+    width: 100%;
+    height: 250px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    z-index: 1000 !important;
+  }
+
+  @media(max-width: 768px) {
+ .next{
+  display: inline;
+  position: absolute;
+  top: 80% ;
+  left: 80%;
+  
+ }
+ .bg-dark{
+  width: 450px;
+ }
+  }
+
+
+  body {
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url('src\assets\loginBack.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color:  #fc6c14 ;
+  }
+  .container-main {
+  max-width: 1200px; /* Ajusta el valor según tus necesidades */
+  margin: 0 auto;
+  padding: 15px;
+}

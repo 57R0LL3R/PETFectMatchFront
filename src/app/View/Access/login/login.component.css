@@ -1,0 +1,101 @@
+.for-m {
+  width: 75%;
+  height: 80%;
+  left: 12.5%;
+  position: relative;
+}
+body{
+  height: 100% !important;
+width: 100%;
+overflow-x: hidden;
+max-height: max-content;
+min-width: 500px;
+}
+@media(max-width: 750px) {
+
+  .left {
+    display: none;
+  }
+
+  .left-content{
+    display: none;
+  }
+
+
+}
+footer{
+  backdrop-filter: blur(10px); /* Aplicar difuminado al contenido detrás */
+  bottom: 0;
+  width: 100%;
+  min-height: 150px;
+  max-height: max-content;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  z-index: 1000 !important;
+}
+
+body {
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-image: url('src\assets\loginBack.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:  #fc6c14 ;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.left-content {
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+  height: 50%;
+  
+}
+
+.right-content {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  float: right; /* Cambiamos "left" a "right" */
+}
+
+
+@media (min-width: 800px) {
+  
+
+  .container {
+    flex-direction: row;
+  }
+  .left-content {
+    flex: 1;
+  }
+
+  .right-content {
+    flex: 1;
+    margin-left: 20px;
+  }
+}
+@media (max-width: 800px) {
+ body {
+    background-size: contain; /* Cambia el tamaño de la imagen de fondo si es necesario */
+  }
+
+  .left-content{
+    display: none;
+  }
+
+}

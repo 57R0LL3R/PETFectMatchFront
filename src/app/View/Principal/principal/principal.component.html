@@ -1,0 +1,118 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <header class="head">
+        <div id="logo">
+            <img [src]="logoUrl" class="h-100 w-50">
+        </div>
+        <div class="center">
+            <button class="buttonshow button1" (click)="showNotifications()" id="BShowNotifications">
+                <mat-icon
+                    mat-list-item>notifications</mat-icon></button>
+        </div>
+        <div class="options">
+            <p id="p1">
+                <a (click)="onClickLogout()" style="cursor: pointer;">{{"Cerrar Sesión" | translate}} <i
+                        class="fas fa-sign-out-alt"></i></a>
+            </p>
+
+        </div>
+        <button mat-button [matMenuTriggerFor]="menu" class="menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+
+            <a mat-list-item (click)="onClickLogout()" class="selected">
+                <i class="fas fa-sign-out-alt"></i> {{"Cerrar Sesión" | translate}}
+            </a>
+            <div *ngIf="mostrarDiv == false">
+                <a mat-list-item class="selected " *ngFor="let link of links" [routerLink]="link.href"
+                    (click)="Routerl(link.href)" data-bs-original-title="Customers">
+                    <i class="{{link.icon}} display-8"></i>
+                    {{link.text | translate}}
+                </a>
+            </div>
+            <div *ngIf="mostrarDiv">
+                <a mat-list-item class="selected " *ngFor="let link of linksAux" [routerLink]="link.href"
+                    (click)="Routerl(link.href)" data-bs-original-title="Customers">
+                    <i class="{{link.icon}} display-8"></i>
+                    {{link.text | translate}}
+                </a>
+
+            </div>
+
+ 
+
+
+
+        </mat-menu>
+
+        <div class="filter">
+            <a mat-list-item style="cursor: pointer;" *ngIf="hrefActual==='/principal/PropertyList'"
+                name="button_filters" type="submit" (click)="showFilters()">
+                <i class="bi bi-funnel"></i>
+                {{"Filtros" | translate}}</a>
+        </div>
+        <div class="filter">
+            <a mat-list-item style="cursor: pointer;" *ngIf="hrefActual==='/principalAdmin/Profile'"
+                name="button_filters" type="submit" (click)="showFilters()">
+                <i class="bi bi-funnel"></i>
+                {{"Filtros" | translate}}</a>
+        </div>
+    </header>
+    <section class="section">
+
+
+        <div class="container-inputs d-flex flex-column flex-shrink-0  bg-body-tertiary">
+            <hr>
+            <mat-nav-list *ngIf="mostrarDiv == false">
+                <a mat-list-item class="selected" *ngFor="let link of links" [routerLink]="link.href"
+                    (click)="Routerl(link.href)" data-bs-original-title="Customers">
+                    <i class="{{link.icon}} display-8"></i>
+                    {{link.text | translate}}
+                </a>
+                <a mat-list-item class="selected" *ngIf="hrefActual==='/principal/PropertyList'" (click)="showFilters()"
+                    class="button_filters" name="button_filters" type="submit" data-toggle="collapse"
+                    href="#collapseSection" aria-expanded="false" aria-controls="collapseSection">
+                    <i class="bi bi-funnel"></i>
+                    {{"Filtros" | translate}}</a>
+
+            </mat-nav-list>
+            <mat-nav-list *ngIf="mostrarDiv">
+                <a mat-list-item class="selected" *ngFor="let link of linksAux" [routerLink]="link.href"
+                    (click)="Routerl(link.href)" data-bs-original-title="Customers">
+                    <i class="{{link.icon}} display-8"></i>
+                    {{link.text | translate}}
+                </a>
+
+                <a mat-list-item class="selected" *ngIf="hrefActual==='/principal/PropertyList'" name="button_filters"
+                    type="submit" data-toggle="collapse" href="#collapseSection" aria-expanded="false"
+                    aria-controls="collapseSection">
+                    <i class="bi bi-funnel"></i>
+                    {{"Filtros" | translate}}</a>
+
+            </mat-nav-list>
+            <div class="log">
+                <img [src]="imgUrl" class="img-left">
+            </div>
+        </div>
+
+        <div class="div-inlane">
+
+            <div id="notificationObj" class="scrollable-container">
+                <app-notification></app-notification>
+            </div>
+            <router-outlet>
+
+            </router-outlet>
+        </div>
+
+
+    </section>
+    <footer>
+        <app-footer>
+        </app-footer>
+    </footer>
+</body>

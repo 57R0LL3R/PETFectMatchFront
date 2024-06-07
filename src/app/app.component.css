@@ -1,0 +1,7 @@
+body{
+    height: 100% !important;
+    width: 100%;
+    overflow-x: hidden;
+    max-height: max-content;
+    min-width: 500px;
+}

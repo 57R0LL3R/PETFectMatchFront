@@ -1,0 +1,39 @@
+<body>
+  <div class="container">
+    
+    <div class="left-content">
+    
+    </div>
+    <div class="right-content">
+      <h2>{{"Iniciar Sesión" | translate}} 🐎</h2>
+      <form class="form-signin for-m" [formGroup]="form" (submit)="onClick()">
+        <div class="text-center mb-4 ">
+          <p>"¡{{"Bienvenido de nuevo" | translate}} 🐾!
+            ¡{{"Vamos a hacer que las cosas fluyan" | translate}}! 🐴"</p>
+        </div>
+        <div class="form-label-group">
+          <input type="email" id="inputEmail" formControlName="email" class="form-control"
+            placeholder="{{'Correo Electrónico' | translate}}" required="" autofocus="">
+          <label for="inputEmail">{{"Correo Electrónico" | translate}}</label>
+        </div>
+        <div class="form-label-group">
+          <input type="password" id="inputPassword" formControlName="password" class="form-control"
+            placeholder="{{'Contraseña' | translate}}" required="">
+          <label for="inputPassword">{{"Contraseña" | translate}}</label>
+        </div>
+        <div class="checkbox mb-3">
+        </div>
+        <button class="btn btn-lg btn-primary btn-block w-100" type="submit">{{"Acceder"| translate}}</button>
+        <p>{{"¿Olvidaste la contraseña?" | translate}}. <a routerLink="/forgotpass">{{"Recuperar contraseña" | translate}}</a></p>
+        <p>{{"¿No tienes cuenta?" | translate}} <a routerLink="/register">{{"Registrarme" | translate}}</a></p>
+        <p class="mt-5 mb-3 text-muted text-center">© 2020-2023</p>
+      </form>
+
+    </div>
+  </div>
+  <footer>
+    <app-footer>
+
+    </app-footer>
+  </footer>
+</body>
